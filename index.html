@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seyfuddin Yusuf | Full Hijab & Men's Islamic Apparel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Variables & Theme Setup */
+    :root {
+      --bg-main: #fcfbf9;
+      --bg-card: #ffffff;
+      --text-main: #1c1917;
+      --text-muted: #78716c;
+      --brand-accent: #78350f;
+      --brand-hover: #92400e;
+      --gold-accent: #d97706;
+      --border-color: #e7e5e4;
+      --nav-bg: #291e18;
+      --nav-text: #fef3c7;
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      border: none;
+      background: none;
+    }
+
+    /* Announcement Bar */
+    .announcement-bar {
+      background-color: #1c1917;
+      color: #d6d3d1;
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 8px 16px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: var(--nav-bg);
+      color: var(--nav-text);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--nav-text);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-actions button, .nav-actions a {
+      color: var(--nav-text);
+      transition: color 0.2s ease;
+    }
+
+    .nav-actions button:hover, .nav-actions a:hover {
+      color: var(--gold-accent);
+    }
+
+    .cart-btn {
+      position: relative;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      background-color: var(--gold-accent);
+      color: #ffffff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(rgba(28, 25, 23, 0.65), rgba(28, 25, 23, 0.65)), 
+                  url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      color: #ffffff;
+      text-align: center;
+      padding: 120px 24px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: #e7e5e4;
+      margin-bottom: 32px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--brand-accent);
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--brand-hover);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: 4px;
+      border: 1px solid #ffffff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: #ffffff;
+      color: var(--text-main);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 48px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    /* Category Cards Grid */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-bottom: 80px;
+    }
+
+    .category-card {
+      position: relative;
+      height: 420px;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .category-card.women {
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%),
+                  url('https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=800&auto=format&fit=crop') center/cover no-repeat;
+    }
+
+    .category-card.men {
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%),
+                  url('https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=800&auto=format&fit=crop') center/cover no-repeat;
+    }
+
+    .category-content {
+      color: #ffffff;
+      z-index: 2;
+    }
+
+    .category-content h3 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    .category-content p {
+      font-size: 0.95rem;
+      color: #d6d3d1;
+      margin-bottom: 16px;
+    }
+
+    .category-link {
+      color: var(--gold-accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 32px;
+    }
+
+    .product-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      background-color: #f5f5f4;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .product-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--brand-accent);
+      margin-bottom: 16px;
+    }
+
+    .add-to-cart-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: var(--text-main);
+      color: #ffffff;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: background-color 0.2s ease;
+    }
+
+    .add-to-cart-btn:hover {
+      background-color: var(--brand-accent);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #12100e;
+      color: #a8a29e;
+      padding: 60px 24px 30px;
+      border-top: 1px solid #292524;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul a {
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--gold-accent);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid #292524;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #78716c;
+    }
+
+    /* Responsive Design Adjustments */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .category-card {
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    Complimentary Worldwide Shipping on Orders Over $150
+  </div>
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">Seyfuddin Yusuf</a>
+
+      <ul class="nav-links">
+        <li><a href="#women">Women's Full Hijab</a></li>
+        <li><a href="#men">Men's Apparel</a></li>
+        <li><a href="#new">New Arrivals</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button aria-label="Search">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </button>
+        <a href="#account" aria-label="Account">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+        </a>
+        <a href="#cart" class="cart-btn" aria-label="Cart">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          <span class="cart-badge">2</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Seyfuddin Yusuf</h1>
+      <p class="hero-subtitle">Timeless Elegance & Premium Modest Apparel for Men and Women</p>
+      <div class="hero-buttons">
+        <a href="#women" class="btn-primary">Shop Full Hijab</a>
+        <a href="#men" class="btn-secondary">Shop Men's Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Storefront Section -->
+  <main class="container">
+
+    <!-- Categories Grid -->
+    <h2 class="section-title">Shop by Category</h2>
+    <div class="categories-grid">
+      <div class="category-card women" id="women">
+        <div class="category-content">
+          <h3>Full Hijab Collection</h3>
+          <p>Complete Jilbabs, Premium Abayas, Khimars & Sets</p>
+          <a href="#" class="category-link">Explore Collection &rarr;</a>
+        </div>
+      </div>
+
+      <div class="category-card men" id="men">
+        <div class="category-content">
+          <h3>Men's Islamic Attire</h3>
+          <p>Tailored Thobes, Elegant Jubbahs & Casual Modest Wear</p>
+          <a href="#" class="category-link">Explore Collection &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Products -->
+    <h2 class="section-title" id="new">New Arrivals</h2>
+    <div class="product-grid">
+
+      <!-- Product Item 1 -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=600&auto=format&fit=crop" alt="Silk Layered Abaya" class="product-image">
+        <div class="product-info">
+          <p class="product-category">Women • Abaya</p>
+          <h3 class="product-name">Royal Silk Layered Abaya</h3>
+          <p class="product-price">$120.00</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product Item 2 -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=600&auto=format&fit=crop" alt="Premium Egyptian Cotton Thobe" class="product-image">
+        <div class="product-info">
+          <p class="product-category">Men • Thobe</p>
+          <h3 class="product-name">Egyptian Cotton Thobe</h3>
+          <p class="product-price">$95.00</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product Item 3 -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600&auto=format&fit=crop" alt="Two-Piece Overhead Khimar" class="product-image">
+        <div class="product-info">
+          <p class="product-category">Women • Hijab</p>
+          <h3 class="product-name">Two-Piece Overhead Khimar</h3>
+          <p class="product-price">$65.00</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product Item 4 -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop" alt="Embroidered Jubbah Set" class="product-image">
+        <div class="product-info">
+          <p class="product-category">Men • Outerwear</p>
+          <h3 class="product-name">Embroidered Jubbah Set</h3>
+          <p class="product-price">$140.00</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Seyfuddin Yusuf</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6;">Providing high-quality modest apparel for women and men worldwide. Dedicated to craftsmanship, dignity, and modern design.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#women">Women's Full Hijab</a></li>
+          <li><a href="#men">Men's Collection</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Our Story</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Customer Support</h4>
+        <ul>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Frequently Asked Questions</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Order Tracking</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Seyfuddin Yusuf Store. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
